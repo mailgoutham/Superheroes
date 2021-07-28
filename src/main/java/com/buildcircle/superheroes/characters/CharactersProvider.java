@@ -1,4 +1,2 @@
-package com.buildcircle.superheroes.characters;
-
-public class CharactersProvider {
+package com.buildcircle.superheroes.characters;public interface CharactersProvider {
 }
