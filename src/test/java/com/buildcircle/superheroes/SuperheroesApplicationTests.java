@@ -8,6 +8,7 @@ class SuperheroesApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }
