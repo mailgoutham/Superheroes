@@ -6,13 +6,11 @@ The characters and their stats are stored in a json file stored in AWS S3 - http
 
 Our `BattleController` pulls the json file from S3 and works out the winner by comparing the scores from the json.
 
-
 ## Battle endpoint
 
 Have a look at the `/battle` endpoint. How would you make this better?
 
-How would you improve the tests in `./Superheroes.Tests/BattleTests.cs`?
-
+How would you improve the tests in `com.buildcircle.superheroes/BattleTests.java`?
 
 ## Weaknesses
 
