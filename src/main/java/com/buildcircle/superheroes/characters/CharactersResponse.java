@@ -1,7 +1,9 @@
 package com.buildcircle.superheroes.characters;
 
-public class CharactersResponse {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class CharactersResponse {
     public CharactersResponse(CharacterResponse[] items)
     {
         this.items = items;

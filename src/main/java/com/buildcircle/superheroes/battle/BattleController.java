@@ -2,7 +2,7 @@ package com.buildcircle.superheroes.battle;
 import com.buildcircle.superheroes.characters.CharacterResponse;
 import com.buildcircle.superheroes.characters.CharactersProvider;
 import com.buildcircle.superheroes.characters.CharactersResponse;
-import com.google.gson.Gson;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,11 +16,15 @@ public class BattleController {
     @Autowired
     private final CharactersProvider charactersProvider;
 
+    @Autowired
+    private ObjectMapper objectMapper;
+
     private static CharacterResponse character1;
     private static CharacterResponse character2;
 
-    public BattleController(CharactersProvider charactersProvider)
+    public BattleController(CharactersProvider charactersProvider, ObjectMapper objectMapper)
     {
+        this.objectMapper = objectMapper;
         this.charactersProvider = charactersProvider;
     }
 
@@ -44,10 +48,10 @@ public class BattleController {
 
         if(character1.score > character2.score)
         {
-            return new Gson().toJson(character1);
+            return objectMapper.writeValueAsString(character1);
         }
 
-        return new Gson().toJson(character2);
+        return objectMapper.writeValueAsString(character2);
     }
 
 }
