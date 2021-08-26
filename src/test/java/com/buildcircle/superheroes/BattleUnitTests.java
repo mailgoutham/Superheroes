@@ -20,8 +20,8 @@ class BattleUnitTests {
     void canGetHeroes() throws IOException, InterruptedException {
 
         CharacterResponse[] responses = new CharacterResponse[2];
-        responses[0] = new CharacterResponse("Batman",8.3,"hero","Joker");
-        responses[1] = new CharacterResponse("Joker",8.2,"villain",null);
+        responses[0] = new CharacterResponse("Batman",8.3,"hero");
+        responses[1] = new CharacterResponse("Joker",8.2,"villain");
 
         CharactersResponse fakeResponse = new CharactersResponse(responses);
 
@@ -36,7 +36,7 @@ class BattleUnitTests {
         String responseBody = battleController.battle(hero,villain);
 
         //Then
-        Assert.assertTrue(responseBody.equals("{\"name\":\"Batman\",\"score\":8.3,\"type\":\"hero\",\"weakness\":\"Joker\"}"));
+        Assert.assertTrue(responseBody.equals("{\"name\":\"Batman\",\"score\":8.3,\"type\":\"hero\"}"));
     }
 
 }
