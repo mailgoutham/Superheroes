@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.ResponseEntity;
 
 import java.io.IOException;
 
@@ -33,10 +34,10 @@ class BattleUnitTests {
         String villain = "Joker";
 
         //When
-        String responseBody = battleController.battle(hero,villain);
+        ResponseEntity<String> responseBody = battleController.battle(hero,villain);
 
         //Then
-        Assert.assertTrue(responseBody.equals("{\"name\":\"Batman\",\"score\":8.3,\"type\":\"hero\"}"));
+        Assert.assertTrue(responseBody.getBody().equals("{\"name\":\"Batman\",\"score\":8.3,\"type\":\"hero\"}"));
     }
 
 }

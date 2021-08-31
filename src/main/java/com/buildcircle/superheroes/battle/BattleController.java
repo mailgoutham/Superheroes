@@ -4,11 +4,13 @@ import com.buildcircle.superheroes.characters.CharactersProvider;
 import com.buildcircle.superheroes.characters.CharactersResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.net.http.HttpResponse;
 
 @RestController
 public class BattleController {
@@ -29,8 +31,8 @@ public class BattleController {
     }
 
     @GetMapping("/battle")
-    public String battle(@RequestParam(value = "hero") final String hero,
-                            @RequestParam(value = "villain") final String villain) throws IOException, InterruptedException {
+    public ResponseEntity<String> battle(@RequestParam(value = "hero") final String hero,
+                                         @RequestParam(value = "villain") final String villain) throws IOException, InterruptedException {
 
         CharactersResponse characters = charactersProvider.getCharacters();
 
@@ -48,10 +50,10 @@ public class BattleController {
 
         if(character1.score > character2.score)
         {
-            return objectMapper.writeValueAsString(character1);
+            return ResponseEntity.ok(objectMapper.writeValueAsString(character1));
         }
 
-        return objectMapper.writeValueAsString(character2);
+        return ResponseEntity.ok(objectMapper.writeValueAsString(character2));
     }
 
 }
