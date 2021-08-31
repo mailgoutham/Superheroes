@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.net.http.HttpResponse;
 
 @RestController
 public class BattleController {
@@ -36,19 +35,19 @@ public class BattleController {
 
         CharactersResponse characters = charactersProvider.getCharacters();
 
-        for (CharacterResponse character : characters.items) {
-            if(character.name.equals(hero))
+        for (CharacterResponse character : characters.getItems()) {
+            if(character.getName().equals(hero))
             {
                 character1 = character;
             }
 
-            if(character.name.equals(villain))
+            if(character.getName().equals(villain))
             {
                 character2 = character;
             }
         }
 
-        if(character1.score > character2.score)
+        if(character1.getScore() > character2.getScore())
         {
             return ResponseEntity.ok(objectMapper.writeValueAsString(character1));
         }
