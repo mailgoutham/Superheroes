@@ -1,5 +1,7 @@
 package com.buildcircle.superheroes;
 
+import com.buildcircle.superheroes.battle.BattleController;
+
 import com.buildcircle.superheroes.characters.CharacterResponse;
 import com.buildcircle.superheroes.characters.CharactersResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
