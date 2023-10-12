@@ -20,7 +20,7 @@ Change the `/battle` endpoint to support this functionality.
 
 ## Validation
 
-Superheroes can obviously only fight supervillains and vice versa. Add some validation to make sure this cannot happen.
+Superheroes can obviously only fight supervillains and vice versa. Add some validation to make sure the opposite does not happen.
 
 
 ## Acceptance tests
