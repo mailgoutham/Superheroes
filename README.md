@@ -6,6 +6,7 @@
 5) Added BattleService to make BattleContoller lightweight
 6) Added WinnerLogicService to segregate the winning logic to its own class and test
 7) Added AWS or Provider exception handler to capture any network or thirdparty failure
+8) Both unt tests and integration test has been enhanced to cover all acceptance criteria
 
 
 # Build Circle Superheroes tech test
