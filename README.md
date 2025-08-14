@@ -1,9 +1,11 @@
 # Changes made by Goutham
 1) Moved static Character to local variable inside the method. (Make it thread safe)
-2) Removd Object mapper (Spring Rest by default deserializes the objec to Json)
+2) Removed Object mapper (Spring Rest by default deserializes the objec to Json)
 3) Added Global Exception Handler for status codes and logging
 4) Added Custom exception handler (InvalidBattleException, CharacterNotFoundException, ConflictCharacterTypeException )
 5) Added BattleService to make BattleContoller lightweight
+6) Added WinnerLogicService to segregate the winning logic to its own class and test
+7) Added AWS or Provider exception handler to capture any network or thirdparty failure
 
 
 # Build Circle Superheroes tech test
