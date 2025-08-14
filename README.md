@@ -1,3 +1,11 @@
+# Changes made by Goutham
+1) Moved static Character to local variable inside the method. (Make it thread safe)
+2) Removd Object mapper (Spring Rest by default deserializes the objec to Json)
+3) Added Global Exception Handler for status codes and logging
+4) Added Custom exception handler (InvalidBattleException, CharacterNotFoundException, ConflictCharacterTypeException )
+5) Added BattleService to make BattleContoller lightweight
+
+
 # Build Circle Superheroes tech test
 
 Superheroes and supervillains are always battling it out, but how do we know who wins? This repo contains an API that gives us that answer. The API contains a `/battle` endpoint which takes a hero and a villain and returns the character that wins. 
