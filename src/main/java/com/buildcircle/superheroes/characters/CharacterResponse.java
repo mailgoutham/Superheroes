@@ -13,5 +13,6 @@ public class CharacterResponse {
     private String name;
     private double score;
     private String type;
+    private String weakness;
 
 }
